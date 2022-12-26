@@ -1,8 +1,7 @@
 import React from 'react'
 import DropdownItem from "../DropdownItem";
 
-
-const Dropdown = ({ name, children}) => {
+const Dropdown = ({ name, children }) => {
     return (
         <>
             <button>

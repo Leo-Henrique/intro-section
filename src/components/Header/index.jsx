@@ -40,7 +40,9 @@ const Header = () => {
                     </li>
 
                     <li>
-                        Sobre
+                        <a href="#">
+                            Sobre
+                        </a>
                     </li>
                 </ul>
             </nav>
