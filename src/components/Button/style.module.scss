@@ -29,14 +29,14 @@
             }
         }
         &:active {
-            color: $support-light-2;
-            border-color: $support-light-2;
+            color: $support-light-3;
+            border-color: $support-light-3;
         }
     }
     &Filled {
         background-color: $support-dark-1;
         border-color: $support-dark-1;
-        color: $support-light-1;
+        color: $support-light-2;
 
         @include desktop {
             &:hover {
@@ -45,8 +45,8 @@
             }
         }
         &:active {
-            color: $support-light-2;
-            border-color: $support-light-2;
+            color: $support-light-3;
+            border-color: $support-light-3;
         }
     }
 }
