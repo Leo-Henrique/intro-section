@@ -4,6 +4,7 @@
     &Container {
         display: flex;
         align-items: flex-end;
+        column-gap: 4rem;
     }
     &Img {
         max-width: 480px;

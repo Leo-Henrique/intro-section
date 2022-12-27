@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as SVGArrowUp } from "../../assets/icon-arrow-up.svg"
 import styles from "./style.module.scss";
-import clickOutside from "../../clickOutside";
+import useAnimation from "../../useAnimation";
 
 export const DropdownItem = ({icon, text}) => {
     return (
@@ -16,49 +16,22 @@ export const DropdownItem = ({icon, text}) => {
 }
 
 export const Dropdown = ({ name, children }) => {
-    const [dropdown, setDropdown] = React.useState(false);
     const btn = React.useRef();
-    const toggleDropdown = () => {
-        const attr = "data-transition";
-        const { current } = btn;
-        const menu = current.nextElementSibling;
-        const { milliseconds } = {
-            get duration() {return getComputedStyle(menu).transitionDuration},
-            get seconds() {return this.duration.slice(0, -1)},
-            get milliseconds() {return +this.seconds * 1000}
-        }
-        const close = () => {
-            setDropdown(false);
-            menu.classList.remove(styles.show);
-            setTimeout(() => {
-                menu.classList.remove(styles.display);
-                current.removeAttribute(attr);
-            }, milliseconds);
-        }
-        const animation = () => {
-            current.setAttribute(attr, "");
+    const content = React.useRef();
+    const [visibility, setVisibility] = React.useState(false);
+    let show, close;
+    React.useEffect(() => {
+        [show, close] = useAnimation(btn, content, styles, setVisibility);
 
-            if (!dropdown) {
-                setDropdown(true);
-                menu.classList.add(styles.display);
-                setTimeout(() => menu.classList.add(styles.show), 20);
-                setTimeout(() => {
-                    clickOutside([current, menu], close);
-                    current.removeAttribute(attr);
-                }, milliseconds + 20);
-            } else 
-                close();
-        }
+    }, [visibility])
 
-        if (!current.hasAttribute(attr)) animation();
-    }
 
     return (
         <>
             <button className={styles.dropdownBtn}
-            onClick={toggleDropdown}
             ref={btn}
-            aria-expanded={dropdown ? true : false}>
+            onClick={() => !visibility ? show(): close()}
+            aria-expanded={visibility ? true : false}>
                 <span>
                     {name}
                 </span>
@@ -68,7 +41,8 @@ export const Dropdown = ({ name, children }) => {
                 </div>
             </button>
 
-            <ul className={styles.dropdownMenu}>
+            <ul className={styles.dropdownMenu}
+            ref={content}>
                 {children.map((item, index) => {
                     return <DropdownItem key={index} {...item.props}  />
                 })}
