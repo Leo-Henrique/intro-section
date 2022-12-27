@@ -1,20 +1,22 @@
 import React from "react";
 import { ReactComponent as SVGLogo } from "../../assets/logo.svg";
-import Dropdown from "../Dropdown";
-import DropdownItem from "../DropdownItem";
+import { Dropdown, DropdownItem } from "../Dropdown";
 import { ReactComponent as SVGTodo } from "../../assets/icon-todo.svg";
 import { ReactComponent as SVGCalendar } from "../../assets/icon-calendar.svg";
 import { ReactComponent as SVGReminders } from "../../assets/icon-reminders.svg";
 import { ReactComponent as SVGPlanning } from "../../assets/icon-planning.svg";
+import styles from "./style.module.scss";
+
 
 const Header = () => {
     return (
-        <header>
-            <a href="#">
+        <header className={styles.header}>
+            <a className={styles.headerLogo}
+             href="#">
                 <SVGLogo />
             </a>
 
-            <nav>
+            <nav className={styles.headerNav}>
                 <ul>
                     <li>
                         <Dropdown name="Recursos">
@@ -47,7 +49,7 @@ const Header = () => {
                 </ul>
             </nav>
 
-            <div>
+            <div className={styles.headerUser}>
                 <button>
                     Login
                 </button>

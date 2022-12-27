@@ -1,7 +1,17 @@
 import React from 'react'
-import DropdownItem from "../DropdownItem";
 
-const Dropdown = ({ name, children }) => {
+export const DropdownItem = ({icon, text}) => {
+    return (
+        <a href="#">
+            {icon ? <div>{React.createElement(icon)}</div> : null}
+
+            {icon ? <span>{text}</span> : text}
+        </a>
+    )
+}
+
+
+export const Dropdown = ({ name, children }) => {
     return (
         <>
             <button>
@@ -16,5 +26,3 @@ const Dropdown = ({ name, children }) => {
         </>
     )
 }
-
-export default Dropdown;

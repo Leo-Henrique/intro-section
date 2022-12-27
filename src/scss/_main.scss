@@ -1,0 +1,14 @@
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-size: $body;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $support-light-2;
+}
+.container {
+    max-width: 1140px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}

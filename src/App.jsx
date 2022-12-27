@@ -1,8 +1,4 @@
-// global styles
-import "normalize.css"
-import "./scss/reset.scss"
-
-
+import "./scss/style.scss"
 import Header from "./components/Header";
 import Intro from "./components/Intro";
 import Footer from "./components/Footer";
