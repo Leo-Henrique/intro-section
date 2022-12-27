@@ -1,0 +1,52 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.btn {
+    border: 1px solid;
+    border-radius: 15px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color, border-color, color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+
+    &Small {
+        padding: 1.2rem 2rem;
+    }
+    &Normal {
+        padding: 1.4rem 3rem;
+        font-weight: 700;
+    }
+    &Outline {
+        background-color: transparent;
+        border-color: $support-dark-2;
+        color: $support-dark-2;
+
+        @include desktop {
+            &:hover {
+                color: $support-dark-1;
+                border-color: $support-dark-1;
+            }
+        }
+        &:active {
+            color: $support-light-2;
+            border-color: $support-light-2;
+        }
+    }
+    &Filled {
+        background-color: $support-dark-1;
+        border-color: $support-dark-1;
+        color: $support-light-1;
+
+        @include desktop {
+            &:hover {
+                background-color: transparent;
+                color: $support-dark-1;
+            }
+        }
+        &:active {
+            color: $support-light-2;
+            border-color: $support-light-2;
+        }
+    }
+}

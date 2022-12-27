@@ -1,15 +1,42 @@
 @import "../../scss/mixins";
+@import "../../scss/variables";
 
 .header {
     display: flex;
     align-items: center;
-    column-gap: 4rem;
+    column-gap: 2rem;
     padding: 0 4rem;
     border: 1px solid red;
+    font-size: $body - 0.4rem;
 
-    &Logo {
+    @include breakpoint-lg {
+        justify-content: space-between;
+        column-gap: 4rem;
+    }
+}
+.headerLogo {
+    padding: 2rem;
+    padding-left: 0;
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+
+    @include desktop {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &:active {
+        opacity: 0.4;
+    }
+}
+.headerBtnMobile {
+    display: none;
+
+    @include breakpoint-lg {
+        display: block;
+        cursor: pointer;
         padding: 2rem;
-        opacity: 1;
+        padding-right: 0;
         transition: opacity 200ms ease-in-out;
 
         @include desktop {
@@ -21,8 +48,55 @@
             opacity: 0.4;
         }
     }
-    &Nav ul {
+}
+.headerMenu {
+    display: flex;
+    flex: 1;
+
+    @include breakpoint-lg {
+        display: none;
+    }
+    .headerNav {
         display: flex;
         align-items: center;
+        flex: 1;
+
+        .navItem > button,
+        .navItem > a {
+            color: inherit;
+            padding: 2rem;
+    
+            @include desktop {
+                &:hover {
+                    color: $support-dark-1;
+                }
+            }
+            &:active {
+                color: $support-dark-2;
+            }
+        }
+        .navItem > a {
+            display: block;
+        }
+    }
+    .headerUser {
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+    
+        > button:first-child {
+            cursor: pointer;
+            padding: 1.2rem 2rem;
+            transition: color 200ms ease-in-out;
+    
+            @include desktop {
+                &:hover {
+                    color: $support-dark-1;
+                }
+            }
+            &:active {
+                color: $support-light-2;
+            }
+        }
     }
 }

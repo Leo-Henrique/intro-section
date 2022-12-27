@@ -1,10 +1,12 @@
 import React from "react";
-import { ReactComponent as SVGLogo } from "../../assets/logo.svg";
+import { ReactComponent as SVGMenu} from "../../assets/icon-menu.svg";
 import { Dropdown, DropdownItem } from "../Dropdown";
+import { ReactComponent as SVGLogo } from "../../assets/logo.svg";
 import { ReactComponent as SVGTodo } from "../../assets/icon-todo.svg";
 import { ReactComponent as SVGCalendar } from "../../assets/icon-calendar.svg";
 import { ReactComponent as SVGReminders } from "../../assets/icon-reminders.svg";
 import { ReactComponent as SVGPlanning } from "../../assets/icon-planning.svg";
+import Button from "../Button";
 import styles from "./style.module.scss";
 
 
@@ -16,9 +18,13 @@ const Header = () => {
                 <SVGLogo />
             </a>
 
-            <nav className={styles.headerNav}>
-                <ul>
-                    <li>
+            <button className={styles.headerBtnMobile}>
+                <SVGMenu />
+            </button>
+
+            <nav className={styles.headerMenu}>
+                <ul className={styles.headerNav}>
+                    <li className={styles.navItem}>
                         <Dropdown name="Recursos">
                             <DropdownItem icon={SVGTodo} text="Lista de afazeres" />
                             <DropdownItem icon={SVGCalendar} text="Calendário" />
@@ -27,7 +33,7 @@ const Header = () => {
                         </Dropdown>
                     </li>
 
-                    <li>
+                    <li className={styles.navItem}>
                         <Dropdown name="Empresa">
                             <DropdownItem text="História" />
                             <DropdownItem text="Nosso time" />
@@ -35,29 +41,30 @@ const Header = () => {
                         </Dropdown>
                     </li>
 
-                    <li>
+                    <li className={styles.navItem}>
                         <a href="#">
                             Carreiras
                         </a>
                     </li>
 
-                    <li>
+                    <li className={styles.navItem}>
                         <a href="#">
                             Sobre
                         </a>
                     </li>
                 </ul>
+
+                <div className={styles.headerUser}>
+                    <button>
+                        Login
+                    </button>
+
+                    <Button text="Cadastre-se"
+                    size="small"
+                    filled={false}
+                    />
+                </div>
             </nav>
-
-            <div className={styles.headerUser}>
-                <button>
-                    Login
-                </button>
-
-                <button>
-                    Cadastre-se
-                </button>
-            </div>
         </header>
     )
 }
