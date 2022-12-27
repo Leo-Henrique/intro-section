@@ -1,12 +1,15 @@
 import React from 'react'
+import styles from "./style.module.scss";
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className={styles.footer}>
             <p>
                 <span>
                     Desafio do 
                 </span>
+
+                {"\n"}
 
                 <a href="https://www.frontendmentor.io/home"
                 target="_blank"
@@ -19,6 +22,8 @@ const Footer = () => {
                     Desenvolvido por
                 </span>
 
+                {"\n"}
+                
                 <a href="https://www.linkedin.com/in/leonardo-henrique-/"
                 target="_blank"
                 rel="external noopener noreferrer">

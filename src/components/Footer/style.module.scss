@@ -1,0 +1,25 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.footer {
+    padding: 4rem;
+    font-size: $body - 0.4rem;
+    text-align: center;
+    color: #8b8b8b;
+
+    a {
+        color: $support-dark-1;
+        display: inline-block;
+        padding: 0.2rem 0;
+        transition: color 200ms ease-in-out;
+
+        @include desktop {
+            &:hover {
+                color: $support-light-3;
+            }
+        }
+        &:active {
+            color: $support-dark-2;
+        }
+    }
+}

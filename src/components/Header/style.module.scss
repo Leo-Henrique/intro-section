@@ -6,7 +6,6 @@
     align-items: center;
     column-gap: 2rem;
     padding: 0 4rem;
-    border: 1px solid red;
     font-size: $body - 0.4rem;
 
     @include breakpoint-lg {
@@ -15,7 +14,7 @@
     }
 }
 .headerLogo {
-    padding: 2rem;
+    padding: 3rem 2rem;
     padding-left: 0;
     opacity: 1;
     transition: opacity 200ms ease-in-out;
@@ -35,7 +34,7 @@
     @include breakpoint-lg {
         display: block;
         cursor: pointer;
-        padding: 2rem;
+        padding: 3rem 2rem;
         padding-right: 0;
         transition: opacity 200ms ease-in-out;
 
@@ -79,7 +78,7 @@
         }
         .navItem > button,
         .navItem > a {
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
         .navItem > a {
             display: block;

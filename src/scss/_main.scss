@@ -6,9 +6,15 @@ body {
     color: $support-light-3;
 }
 .container {
-    max-width: 1140px;
+    max-width: 1170px;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+.title {
+    @include font-size($h1);
+    line-height: 1.05;
+    font-weight: 700;
+    color: $support-dark-1;
 }
