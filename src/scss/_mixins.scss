@@ -8,3 +8,8 @@
         @content;
     }
 }
+@mixin breakpoint-md {
+    @media (max-width: 767.98px) {
+        @content;
+    }
+}

@@ -41,7 +41,7 @@ const Intro = () => {
                         type="image/png" />
 
                         <img src={ImgMainDesktop}
-                        alt="" />
+                        alt="Foto de uma pessoa trabalhando remotamente através de um notebook" />
                     </picture>
                 </div>
             </div>

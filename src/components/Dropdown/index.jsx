@@ -22,15 +22,13 @@ export const Dropdown = ({ name, children }) => {
     let show, close;
     React.useEffect(() => {
         [show, close] = useAnimation(btn, content, styles, setVisibility);
-
-    }, [visibility])
-
+    })
 
     return (
         <>
             <button className={styles.dropdownBtn}
             ref={btn}
-            onClick={() => !visibility ? show(): close()}
+            onClick={() => !visibility ? show() : close()}
             aria-expanded={visibility ? true : false}>
                 <span>
                     {name}

@@ -4,6 +4,10 @@ body {
     font-weight: 500;
     line-height: 1.5;
     color: $support-light-3;
+
+    @include breakpoint-md {
+        font-size: $body-sm;
+    }
 }
 .container {
     max-width: 1170px;

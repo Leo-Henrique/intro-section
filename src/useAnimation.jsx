@@ -1,7 +1,6 @@
 import clickOutside from "./clickOutside";
 
 const useAnimation = ({ current: btn }, { current: content }, styles, setVisibility, notClose) => {
-    const hook = "data-hook";
     const attr = "data-transition";
     const { milliseconds } = {
         get duration() {return getComputedStyle(content).transitionDuration},
@@ -32,7 +31,6 @@ const useAnimation = ({ current: btn }, { current: content }, styles, setVisibil
             setTimeout(() => content.classList.add(styles.show), 20);
             setTimeout(() => {
                 content.removeAttribute(attr);
-                document.body.removeAttribute(hook);
 
                 if (notClose)
                     clickOutside(true, [btn, notClose.current], close);

@@ -20,7 +20,7 @@ const Header = () => {
     let show, close;
     React.useEffect(() => {
         [show, close] = useAnimation(btnOpen, content, styles, setVisibility, notClose);
-    }, [visibility])
+    })
 
     return (
         <header className={styles.header}>

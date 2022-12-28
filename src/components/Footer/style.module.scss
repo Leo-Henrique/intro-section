@@ -3,9 +3,13 @@
 
 .footer {
     padding: 4rem;
-    font-size: $body - 0.4rem;
+    font-size: $body - 0.3rem;
     text-align: center;
     color: #8b8b8b;
+
+    @include breakpoint-md {
+        padding: 3rem 1.5rem;
+    }
 
     a {
         color: $support-dark-1;
