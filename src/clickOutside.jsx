@@ -1,11 +1,12 @@
-const clickOutside = (elements, callback) => {
+let handleClick;
+const clickOutside = (addClickOutside, elements, callback) => {
     const attr = "data-clickOutside";
-    const handleElements = () => {
+    const addAttribute = (add) => {
         elements.forEach(parent => {
             const children = parent.querySelectorAll("*");
             const allElements = [parent, ...children]
 
-            if (!parent.hasAttribute(attr))
+            if (add)
                 allElements.forEach(element => element.setAttribute(attr, ""));
             else
                 allElements.forEach(element => element.removeAttribute(attr));
@@ -21,16 +22,17 @@ const clickOutside = (elements, callback) => {
                 document.removeEventListener(event, handleClick);
         });
     }
-    function handleClick({ target }) {
-        if (!target.hasAttribute(attr)) {
-            callback();
-            handleElements();
-            addEvents(false);
-        }
-    }
 
-    handleElements();
-    addEvents(true);
+    if (addClickOutside) {
+        handleClick = ({ target }) => {
+            if (!target.hasAttribute(attr)) callback();
+        }
+        addAttribute(true);
+        addEvents(true);
+    } else {
+        addAttribute(false);
+        addEvents(false);
+    }
 }
 
 export default clickOutside;

@@ -1,7 +1,7 @@
-import React from "react";
 import clickOutside from "./clickOutside";
 
-const useAnimation = ({ current: btn }, { current: content }, styles, setVisibility) => {
+const useAnimation = ({ current: btn }, { current: content }, styles, setVisibility, notClose) => {
+    const hook = "data-hook";
     const attr = "data-transition";
     const { milliseconds } = {
         get duration() {return getComputedStyle(content).transitionDuration},
@@ -16,6 +16,11 @@ const useAnimation = ({ current: btn }, { current: content }, styles, setVisibil
             setTimeout(() => {
                 content.classList.remove(styles.display);
                 content.removeAttribute(attr);
+
+                if (notClose)
+                    clickOutside(false, [btn, notClose.current], close);
+                else
+                    clickOutside(false, [btn, content], close);
             }, milliseconds)
         }
     }
@@ -26,8 +31,13 @@ const useAnimation = ({ current: btn }, { current: content }, styles, setVisibil
             content.classList.add(styles.display);
             setTimeout(() => content.classList.add(styles.show), 20);
             setTimeout(() => {
-                clickOutside([btn, content], close);
                 content.removeAttribute(attr);
+                document.body.removeAttribute(hook);
+
+                if (notClose)
+                    clickOutside(true, [btn, notClose.current], close);
+                else
+                    clickOutside(true, [btn, content], close);
             }, milliseconds + 20)
         }
     }
