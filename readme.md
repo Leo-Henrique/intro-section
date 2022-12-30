@@ -31,7 +31,7 @@ Confira meus principais aprendizados em relação ao React:
 
 Visando reutilização e organização, este é um projeto que apesar de simples, permitiu fragmentar bem a interface em componentes, pois continha funcionalidades (como um menu dropdown) que poderia ser reutilizado em diversas outras partes do site.
 
-Para exemplificar, veja a execução de meu componente a seguir. Bastava especificar somente as características peculiares de cada item, que a função do componente fazia todo o resto do trabalho para criar meu dropdown.
+Para exemplificar, veja a execução de meu componente a seguir. Bastava especificar somente as características peculiares de cada item que a função do componente fazia todo o resto do trabalho para criar meu dropdown.
 
 ```js
 <li className={styles.navItem}>
@@ -56,7 +56,7 @@ Mesmo sendo uma estrutura de pastas desnecessária para o tamanho do projeto, eu
 
 ### 👨‍💻 Hooks personalizados (useAnimation)
 
-Eu continha uma funcionalidade bem comum que, em partes, seria utilizado de forma igual em diferentes componentes na minha página. Seria essa funcionalidade abrir ou fechar um elemento que por padrão é oculto (como um menu mobile e um menu dropdown).
+O projeto continha uma funcionalidade bem comum que, em partes, seria utilizado de forma igual em diferentes componentes na minha página. Seria essa funcionalidade abrir ou fechar um elemento que por padrão é oculto (como um menu mobile e um menu dropdown).
 
 Como havia várias semelhanças, pude criar um hook personalizado chamado *useAnimation*, onde eu passava o elemento que seria aberto ou fechado como argumento obrigatório. O hook retornava pra mim uma função que eu poderia atrelar exatamente no botão que eu gostaria que abrisse ou fechasse o botão.
 
