@@ -61,18 +61,18 @@ O projeto continha uma funcionalidade bem comum que, em partes, seria utilizado 
 Como havia várias semelhanças, pude criar um hook personalizado chamado *useAnimation*, onde eu passava o elemento que seria aberto ou fechado como argumento obrigatório. O hook retornava pra mim uma função que eu poderia atrelar exatamente no botão que eu gostaria que abrisse ou fechasse o botão.
 
 ```js
-    const content = React.useRef();
-    const { visibility, open } = useAnimation({
-        element: content,
-        styles,
-    });
+const content = React.useRef();
+const { visibility, open } = useAnimation({
+    element: content,
+    styles,
+});
 
-    return (
-        <>
-            <button className={styles.dropdownBtn}
-            onClick={open}
-            aria-expanded={visibility}>
-        {/* ... */}
+return (
+    <>
+        <button className={styles.dropdownBtn}
+        onClick={open}
+        aria-expanded={visibility}>
+    {/* ... */}
 ```
 
 O mesmo hook continha diversas características que são iguais em diversas funcionalidades que exibam e ocultam um elemento, poupando assim muita repetição desnecessária.
