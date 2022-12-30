@@ -9,6 +9,7 @@
 
     @include breakpoint-md {
         padding: 3rem 1.5rem;
+        font-size: $body-sm - 0.2rem;
     }
 
     a {
