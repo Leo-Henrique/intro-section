@@ -16,20 +16,17 @@ export const DropdownItem = ({icon, text}) => {
 }
 
 export const Dropdown = ({ name, children }) => {
-    const btn = React.useRef();
     const content = React.useRef();
-    const [visibility, setVisibility] = React.useState(false);
-    let show, close;
-    React.useEffect(() => {
-        [show, close] = useAnimation(btn, content, styles, setVisibility);
-    })
+    const { visibility, open } = useAnimation({
+        element: content,
+        styles,
+    });
 
     return (
         <>
             <button className={styles.dropdownBtn}
-            ref={btn}
-            onClick={() => !visibility ? show() : close()}
-            aria-expanded={visibility ? true : false}>
+            onClick={open}
+            aria-expanded={visibility}>
                 <span>
                     {name}
                 </span>
