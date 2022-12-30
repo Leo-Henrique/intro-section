@@ -13,14 +13,14 @@ import useAnimation from "../../useAnimation";
 
 
 const Header = () => {
-    const btnOpen = React.useRef();
     const content = React.useRef();
-    const notClose = React.useRef();
-    const [visibility, setVisibility] = React.useState(false);
-    let show, close;
-    React.useEffect(() => {
-        [show, close] = useAnimation(btnOpen, content, styles, setVisibility, notClose);
-    })
+    const buttonClose = React.useRef();
+    const options = {
+        element: content,
+        styles,
+        closeOnElements: [content, buttonClose]
+    }
+    const { open } = useAnimation(options);
 
     return (
         <header className={styles.header}>
@@ -31,18 +31,16 @@ const Header = () => {
             </a>
 
             <button className={styles.headerBtnOpen}
-            onClick={() => show()}
-            aria-label="Abrir menu de navegação"
-            ref={btnOpen}>
+            onClick={open}
+            aria-label="Abrir menu de navegação">
                 <SVGBtnOpen />
             </button>
 
             <div className={styles.headerMenuBg}
             ref={content}>
-                <nav className={styles.headerMenu}
-                ref={notClose}>
+                <nav className={styles.headerMenu}>
                     <button className={styles.headerBtnClose}
-                    onClick={() => close()}
+                    ref={buttonClose}
                     aria-label="Fechar menu de navegação">
                         <SVGBtnClose />
                     </button>
