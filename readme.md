@@ -58,7 +58,7 @@ Mesmo sendo uma estrutura de pastas desnecessária para o tamanho do projeto, eu
 
 O projeto continha uma funcionalidade bem comum que, em partes, seria utilizado de forma igual em diferentes componentes na minha página. Seria essa funcionalidade abrir ou fechar um elemento que por padrão é oculto (como um menu mobile e um menu dropdown).
 
-Como havia várias semelhanças, pude criar um hook personalizado chamado *useAnimation*, onde eu passava o elemento que seria aberto ou fechado como argumento obrigatório. O hook retornava pra mim uma função que eu poderia atrelar exatamente no botão que eu gostaria que abrisse ou fechasse o botão.
+Como havia várias semelhanças, pude criar um hook personalizado chamado *useAnimation*, onde eu passava o elemento que seria aberto ou fechado como argumento obrigatório. O hook retornava pra mim uma função que eu poderia atrelar no botão que eu gostaria que abrisse ou fechasse o elemento passado na execução do hook.
 
 ```js
 const content = React.useRef();
