@@ -2,8 +2,6 @@
 
 Sendo este um projeto simples da plataforma Frontend Mentor, o mesmo ainda continha funcionalidades e uma estrutura interessante para **compor componentes React** e até utilizar **hooks personalizados**.
 
-Decidi escolher um projeto com um resultado bem simples pela plataforma Frontend Mentor, mas que fosse possível já botar a mão na massa em conceitos trazidos pelo React, tais como **JSX**, **componentes** e alguns **hooks** básicos do React.
-
 ![Captura de tela do projeto](https://user-images.githubusercontent.com/72027449/210087631-f2d609c6-3c3d-47c8-b178-b7e9f393df21.png)
 
 ## 🔗 Acesse o projeto
