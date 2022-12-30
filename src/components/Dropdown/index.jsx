@@ -31,9 +31,9 @@ export const Dropdown = ({ name, children }) => {
                     {name}
                 </span>
 
-                <div>
+                <span>
                     <SVGArrowUp />
-                </div>
+                </span>
             </button>
 
             <ul className={styles.dropdownMenu}
