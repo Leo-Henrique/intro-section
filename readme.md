@@ -6,7 +6,7 @@ Sendo este um projeto simples da plataforma Frontend Mentor, o mesmo ainda conti
 
 ## 🔗 Acesse o projeto
 
-* [Site ao vivo](https://leo-henrique.github.io/intro-section//)
+* [Site ao vivo](https://leo-henrique.github.io/intro-section/)
 * [Desafio no Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5)
 
 ## 🚀 Execute em sua máquina
