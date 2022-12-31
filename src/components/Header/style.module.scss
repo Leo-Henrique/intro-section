@@ -172,6 +172,7 @@
         column-gap: 2rem;
     
         > button:first-child {
+            color: inherit;
             cursor: pointer;
             padding: 1.2rem 2rem;
             transition: color 200ms ease-in-out;
@@ -186,7 +187,6 @@
             }
         }
         @include breakpoint-lg {
-
             flex-direction: column;
             padding: 0 2.5rem;
 
